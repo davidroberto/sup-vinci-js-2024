@@ -1,18 +1,13 @@
-var question = document.querySelector(".question");
-
-var isResponseDisplayed = false;
-
-var response = document.createElement("p");
-response.textContent = "pour faire plus d'oseille";
 var body = document.querySelector("body");
 
-question.addEventListener("click", () => {
-  if (isResponseDisplayed === false) {
-    body.appendChild(response);
+function createParagraph(textParagraph) {
+  var paragraph = document.createElement("p");
+  paragraph.textContent = textParagraph;
+  body.appendChild(paragraph);
+}
 
-    isResponseDisplayed = true;
-  } else {
-    body.removeChild(response);
-    isResponseDisplayed = false;
-  }
-});
+createParagraph("Bonjour");
+
+createParagraph("Hello");
+
+createParagraph("Au revoir");
