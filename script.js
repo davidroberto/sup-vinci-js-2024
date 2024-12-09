@@ -1,9 +1,18 @@
-var button1 = document.getElementById("button1");
+var question = document.querySelector(".question");
 
-button1.addEventListener("click", () => {
-  var paragraph = document.createElement("p");
-  paragraph.textContent = "Bravo, tu as bien cliqué sur le bouton";
+var isResponseDisplayed = false;
 
-  var body = document.getElementById("body");
-  body.appendChild(paragraph);
+var response = document.createElement("p");
+response.textContent = "pour faire plus d'oseille";
+var body = document.querySelector("body");
+
+question.addEventListener("click", () => {
+  if (isResponseDisplayed === false) {
+    body.appendChild(response);
+
+    isResponseDisplayed = true;
+  } else {
+    body.removeChild(response);
+    isResponseDisplayed = false;
+  }
 });
