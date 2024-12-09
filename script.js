@@ -1,15 +1,19 @@
-var fullName = "David Robert";
-var age = 34;
-var isAuthenticated = true;
+// j'utilise l'"objet" "document"
+// qui me permet d'utiliser des fonctionnalité sur le DOM
+//(cibler un élement HTML, en créer un, en supprimer un etc)
 
-var langages = ["PHP", "Javascript", "Rust", "react.js"];
+// le DOM est une sorte de "schéma" du HTML que le navigateur génère
+// et qui permet au javascript de manipuler le HTML
 
-// j'utilise l'instruction forEach pour faire une boucle.
-// foreach me donnera pour chaque tour de boucle la valeur de l'élément
-// je dois juste lui donner le nom de la variable (ici langage) dans laquelle la stocker
+// ici j'utilise la "fonction" getElementById, qui me permet
+// de trouver dans le DOM (donc dans le HTML) un élément par rapport à son id
 
-// pour chaque tour de boucle, j'éxecute une fonction, qui fait un
-// console.log du langage
-langages.forEach((langage) => {
-  console.log(langage);
+// une fois trouvé, je stocke l'élément dans une variable
+var button1 = document.getElementById("button1");
+
+// j'utilise la référence vers le bouton (donc ma variable)
+// et je lui ajoute un event listener
+// qui executera une fonction au click sur le bouton
+button1.addEventListener("click", () => {
+  console.log("hello");
 });
