@@ -1,13 +1,18 @@
-var body = document.querySelector("body");
+function createPokemon() {
+  var article = document.createElement("article");
 
-function createParagraph(textParagraph) {
-  var paragraph = document.createElement("p");
-  paragraph.textContent = textParagraph;
-  body.appendChild(paragraph);
+  var title = document.createElement("h2");
+  title.textContent = "Mew";
+
+  var image = document.createElement("img");
+  image.src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/151.png";
+
+  article.appendChild(title);
+  article.appendChild(image);
+
+  var body = document.querySelector("body");
+
+  body.appendChild(article);
 }
 
-createParagraph("Bonjour");
-
-createParagraph("Hello");
-
-createParagraph("Au revoir");
+setTimeout(createPokemon, 5000);
