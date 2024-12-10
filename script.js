@@ -1,18 +1,23 @@
-function createPokemon() {
-  var article = document.createElement("article");
+var pokemonData = {
+  name: "Dracofeu",
+  type: "feu",
+  attack: 50,
+  attackSpecial: "lance-flamme",
+  defense: 60,
+  resistance: "plante",
+  image: "https://www.pokepedia.fr/images/thumb/1/17/Dracaufeu-RFVF.png/800px-Dracaufeu-RFVF.png",
+};
 
-  var title = document.createElement("h2");
-  title.textContent = "Mew";
+var article = document.querySelector(".pokemon");
 
-  var image = document.createElement("img");
-  image.src = "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/151.png";
+article.addEventListener("click", () => {
+  var titleElement = document.createElement("h1");
+  titleElement.textContent = pokemonData.name;
 
-  article.appendChild(title);
-  article.appendChild(image);
+  article.appendChild(titleElement);
 
-  var body = document.querySelector("body");
+  var imageElement = document.createElement("img");
+  imageElement.src = pokemonData.image;
 
-  body.appendChild(article);
-}
-
-setTimeout(createPokemon, 5000);
+  article.appendChild(imageElement);
+});
